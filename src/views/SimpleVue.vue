@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <h1>if/else</h1>
     <p v-if="random > 0.5">
@@ -28,6 +29,16 @@
     <label for="spade">spade</label>
     <p>선택: {{ checkedItem }}</p>
   </div>
+  <div>
+    <h1>radio</h1>
+    <input type="radio" id="annie" value="annie" v-model="radioItem">
+    <label for="annie">annie</label>
+    <input type="radio" id="buddy" value="buddy" v-model="radioItem">
+    <label for="buddy">buddy</label>
+    <input type="radio" id="camel" value="camel" v-model="radioItem">
+    <label for="camel">camel</label>
+    <p>선택: {{ radioItem }}</p>
+  </div>
 
   <div>
     <h1>compute</h1>
@@ -41,16 +52,14 @@
 <script>
 
 export default {
-  name: 'App',
-  methods: {
-
-  },
+  name: 'SimpleVue',
 
   data() {
     return {
       items: [{ message: 'item1' }, { message: 'item2' }],
       arrayStar: {counting: 'star'},
       checkedItem: [],
+      radioItem: '',
       firstname: '',
       lastname: '',
       random: Math.random(),
@@ -67,17 +76,15 @@ export default {
 </script>
 
 <style scoped>
-html body{
-  margin: 0;
-}
-div {
-  border: 1px dotted gray;
-  padding: 10px;
-}
 h1 {
-  color: darkred;
+  color: darkslateblue;
 }
 input {
   width: 50px;
+}
+div {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
 }
 </style>
