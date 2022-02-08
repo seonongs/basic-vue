@@ -42,9 +42,10 @@
 
   <div>
     <h1>compute</h1>
-    <input v-model="firstname" placeholder="성"/>
+    <input v-model="firstname" placeholder="성" @keydown.enter="plus()"/>
     <input v-model="lastname" placeholder="이름"/>
     <p>{{ fullName }}</p>
+    <button @click="plus()">plus</button>
   </div>
 
 </template>
@@ -71,6 +72,12 @@ export default {
       return `${this.firstname} ${this.lastname}`
     }
   },
+
+  methods: {
+    plus() {
+      this.firstname++
+    }
+  }
 
 }
 </script>

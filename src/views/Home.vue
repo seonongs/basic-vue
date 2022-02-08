@@ -1,12 +1,17 @@
 <template>
   <div>
-    <h1>Home</h1>
+    {{ time }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      time: new Date().toLocaleString(),
+    }
+  }
 }
 </script>
 

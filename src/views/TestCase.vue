@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <h1>Error Page</h1>
-  </div>
+  <div></div>
+
 </template>
 
 <script>
 export default {
-  name: "ErrorPage"
+  name: "TestCase"
 }
 </script>
+
+<style scoped>
+
+</style>

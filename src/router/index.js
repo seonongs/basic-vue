@@ -1,22 +1,28 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import SimpleVue from "@/views/SimpleVue.vue";
+import TestCase from "@/views/TestCase";
 import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
     {
         path: "/",
-        name: "Home",
         component: Home,
-    },    {
+        name: "Home",
+    },
+    {
         path: "/simpleVue",
-        name: "SimpleVue",
         component: SimpleVue,
+        name: "SimpleVue",
+    },    {
+        path: "/testCase",
+        component: TestCase,
+        name: "TestCase",
     },
     {
         path: '/:pathMatch(.*)*',
-        name: "ErrorPage",
         component: ErrorPage,
+        name: "ErrorPage",
     },
 ];
 
