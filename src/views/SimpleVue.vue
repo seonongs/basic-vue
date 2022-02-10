@@ -1,20 +1,25 @@
 <template>
 
   <div>
-    <h1>if/else</h1>
-    <p v-if="random > 0.5">
-      {{ random }} - ok, better than noting,
-    </p>
-    <p v-else>
-      {{ random }} - Now you don't
-    </p>
+    <h1>random</h1>
+    <span>
+      <button @click="randomDice">Random-Dice</button>
+      </span>
+    <span v-text="random" class="ml"></span>
   </div>
 
   <div>
-    <h1>for</h1>
-    <ul>
-      <li v-for="(item, index) in items" v-bind:key="item.index">{{ index }} - {{ item.message }}</li>
-    </ul>
+    <h1>compute</h1>
+    <input v-model="firstname" placeholder="성" @keydown.enter="plus()"/>
+    <input v-model="lastname" placeholder="이름"/>
+    <span>{{ fullName }}</span>
+  </div>
+
+  <div>
+    <h1>연산</h1>
+    <span><button @click="plus" class="btn">+</button></span>
+    <span><button @click="minus" class="btn">-</button></span>
+    <span class="ml">{{ digit }}</span>
   </div>
 
   <div>
@@ -29,6 +34,7 @@
     <label for="spade">spade</label>
     <p>선택: {{ checkedItem }}</p>
   </div>
+
   <div>
     <h1>radio</h1>
     <input type="radio" id="annie" value="annie" v-model="radioItem">
@@ -41,29 +47,31 @@
   </div>
 
   <div>
-    <h1>compute</h1>
-    <input v-model="firstname" placeholder="성" @keydown.enter="plus()"/>
-    <input v-model="lastname" placeholder="이름"/>
-    <p>{{ fullName }}</p>
-    <button @click="plus()">plus</button>
+    <h1>for</h1>
+    <ul>
+      <li
+          v-for="user in users"
+          v-bind:key="user"
+      >{{ user.title }}</li>
+    </ul>
   </div>
 
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
   name: 'SimpleVue',
 
   data() {
     return {
-      items: [{ message: 'item1' }, { message: 'item2' }],
-      arrayStar: {counting: 'star'},
       checkedItem: [],
       radioItem: '',
       firstname: '',
       lastname: '',
-      random: Math.random(),
+      random: parseInt(Math.random() * 6 + 1),
+      users: [],
+      digit: 0,
     }
   },
 
@@ -75,23 +83,45 @@ export default {
 
   methods: {
     plus() {
-      this.firstname++
+      this.digit++
+    }    ,
+    minus() {
+      this.digit--
+    },
+    randomDice(){
+      this.random = parseInt(Math.random() * 6 + 1)
     }
-  }
+  },
+
+  created() {
+    axios.get('https://api.hnpwa.com/v0/news/1.json')
+    .then(response => this.users = response.data)
+    .catch()
+  },
 
 }
 </script>
 
 <style scoped>
+div {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+}
 h1 {
   color: darkslateblue;
 }
 input {
   width: 50px;
 }
-div {
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid black;
+button {
+  color: white;
+  background-color: darkblue;
+  border: 1px solid black;
+  margin: 1px;
+  padding: 3px;
+}
+.ml {
+  margin-left: 5px;
 }
 </style>

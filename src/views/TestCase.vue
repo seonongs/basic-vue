@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    zzz
+  </div>
 
 </template>
 
@@ -10,5 +12,12 @@ export default {
 </script>
 
 <style scoped>
-
+div {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+}
+h1 {
+  color: darkslateblue;
+}
 </style>
