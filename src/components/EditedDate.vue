@@ -12,6 +12,11 @@ export default {
     }
   },
   created() {
+  },
+  methods: {
+    eventDate() {
+      this.emitter.emit('eventDate', 'hi');
+    }
   }
 
 }

@@ -25,10 +25,14 @@ export default {
   methods: {
     changeUserInfo() {
       this.$emit('InputBox', this.user)
-    }
+    },
+
   },
   emits: {
 
+  },
+  mounted() {
+    this.emitter.on("eventDate", this.addData);
   }
 }
 </script>
@@ -36,6 +40,7 @@ export default {
 <style scoped>
 button {
   color: white;
+
   background-color: darkblue;
   border: 1px solid black;
   margin: 1px;
