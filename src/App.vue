@@ -7,8 +7,11 @@
     <router-link to="/simpleVue">
       <a>SimpleVue</a>
     </router-link>
-    <router-link to="/testCase">
-      <a>TestCase</a>
+    <router-link to="/parentsView">
+      <a>Parents</a>
+    </router-link>
+    <router-link to="/exampleView">
+      <a>Example</a>
     </router-link>
   </div>
 
