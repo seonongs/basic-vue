@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input type="text" v-model="user.name">
-    <input type="text" v-model="user.phone">
+    이름: <input type="text" v-model="user.name">
+    전화번호: <input type="text" v-model="user.phone">
     <button @click="changeUserInfo">수정</button>
   </div>
 </template>
@@ -24,13 +24,21 @@ export default {
   },
   methods: {
     changeUserInfo() {
-      console.log(this.user)
-      this.$emit('InputBox',this.user.name, this.user.phone)
+      this.$emit('InputBox', this.user)
     }
+  },
+  emits: {
+
   }
 }
 </script>
 
 <style scoped>
-
+button {
+  color: white;
+  background-color: darkblue;
+  border: 1px solid black;
+  margin: 1px;
+  padding: 3px;
+}
 </style>
