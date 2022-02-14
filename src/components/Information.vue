@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>{{ inputText }}</span>
+    <span></span>
   </div>
 </template>
 
@@ -8,15 +8,11 @@
 export default {
   name: "Information",
   props: {
-    inputText: String,
   },
   data() {
     return{
     }
   },
-  emits: {
-
-  }
 }
 </script>
 

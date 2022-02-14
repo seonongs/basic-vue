@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import SimpleVue from "@/views/SimpleVue.vue";
 import ParentsView from "@/views/ParentsView";
-import ExampleView from "@/views/ExampleView";
+import UserView from "@/views/UserView";
 import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
@@ -22,9 +22,9 @@ const routes = [
         name: "ParentsView",
     },
     {
-        path: "/exampleView",
-        component: ExampleView,
-        name: "ExampleView",
+        path: "/userView",
+        component: UserView,
+        name: "UserView",
     },
     {
         path: '/:pathMatch(.*)*',

@@ -1,14 +1,8 @@
 <template>
   <div>
-    <input type="text" v-model="inputText"/>
-
-    <input type="checkbox" id="annie" value="annie">
-    <label for="annie">annie</label>
-    <input type="checkbox" id="buddy" value="buddy">
-    <label for="buddy">buddy</label>
-    <input type="checkbox" id="camel" value="camel">
-    <label for="camel">camel</label>
-
+    <input type="text" v-model="user.name">
+    <input type="text" v-model="user.phone">
+    <button @click="changeUserInfo">수정</button>
   </div>
 </template>
 
@@ -17,11 +11,22 @@ export default {
   name: "InputBox",
   data() {
     return{
-      inputText: '',
+      user: {},
     }
   },
   props: {
-    inputBox: String,
+    name: String,
+    phone: String,
+  },
+  created() {
+    this.user.name = this.name
+    this.user.phone = this.phone
+  },
+  methods: {
+    changeUserInfo() {
+      console.log(this.user)
+      this.$emit('InputBox',this.user.name, this.user.phone)
+    }
   }
 }
 </script>

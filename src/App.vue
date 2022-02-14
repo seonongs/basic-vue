@@ -10,8 +10,8 @@
     <router-link to="/parentsView">
       <a>Parents</a>
     </router-link>
-    <router-link to="/exampleView">
-      <a>Example</a>
+    <router-link to="/UserView">
+      <a>User</a>
     </router-link>
   </div>
 
