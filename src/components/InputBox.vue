@@ -1,8 +1,14 @@
 <template>
   <div>
-    이름: <input type="text" v-model="user.name">
-    전화번호: <input type="text" v-model="user.phone">
-    <button @click="changeUserInfo">수정</button>
+    <span class="material-icons-outlined">
+    credit_card
+    </span>
+    <q-input type="text" v-model="user.name"></q-input>
+    <span class="material-icons">
+    phone_iphone
+    </span>
+    <q-input type="text" v-model="user.phone"></q-input>
+    <q-btn @click="changeUserInfo">수정</q-btn>
   </div>
 </template>
 
@@ -38,12 +44,5 @@ export default {
 </script>
 
 <style scoped>
-button {
-  color: white;
 
-  background-color: darkblue;
-  border: 1px solid black;
-  margin: 1px;
-  padding: 3px;
-}
 </style>

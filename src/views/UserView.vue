@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h1>{{ name }}</h1>
-    <h1>{{ phone }}</h1>
-  </div>
+    <h3>{{ name }}</h3>
+    <h3>{{ phone }}</h3>
 
+  </div>
   <InputBox :name="name" :phone="phone" @InputBox="changeUserInfo"/>
   <EditedDate></EditedDate>
-
 </template>
 
 <script>

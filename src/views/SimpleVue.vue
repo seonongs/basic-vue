@@ -1,42 +1,86 @@
 <template>
 
   <div>
-    <h1>random</h1>
+    <h6>random</h6>
     <span>
-      <button @click="randomDice">Random-Dice</button>
+      <q-btn @click="randomDice">Random-Dice</q-btn>
       </span>
-    <span v-text="random" class="ml"></span>
+    <h5 v-text="random" class="ml"></h5>
   </div>
 
   <div>
-    <h1>compute</h1>
-    <input v-model="firstname" placeholder="성" @keydown.enter="plus()"/>
-    <input v-model="lastname" placeholder="이름"/>
-    <span>{{ fullName }}</span>
+    <h3>compute</h3>
+    <q-input v-model="firstname" label="first" style="width: 100px; display: inline-flex" />
+    <q-input v-model="lastname" label="last" style="width: 100px; display: inline-flex" />
+    <q-field label="full" stack-label style="width: 150px; display: inline-flex">
+      <template v-slot:control>
+        <div class="self-center full-width no-outline" tabindex="0">{{ fullName }}</div>
+      </template>
+    </q-field>
   </div>
 
   <div>
-    <h1>연산</h1>
-    <span><button @click="plus" class="btn">+</button></span>
-    <span><button @click="minus" class="btn">-</button></span>
-    <span class="ml">{{ digit }}</span>
+    <h3>연산</h3>
+    <q-btn @click="plus">+</q-btn>
+    <q-btn @click="minus">-</q-btn>
+    <q-field filled style="width: 150px; display: inline-flex">
+      <template v-slot:control>
+        <div class="self-center full-width no-outline" tabindex="0">{{ digit }}</div>
+      </template>
+    </q-field>
   </div>
 
   <div>
-    <h1>checkbox</h1>
-    <input type="checkbox" id="ace" value="ace" v-model="checkedItem">
-    <label for="ace">ace</label>
-    <input type="checkbox" id="diamond" value="diamond" v-model="checkedItem">
-    <label for="diamond">diamond</label>
-    <input type="checkbox" id="heart" value="heart" v-model="checkedItem">
-    <label for="heart">heart</label>
-    <input type="checkbox" id="spade" value="spade" v-model="checkedItem">
-    <label for="spade">spade</label>
-    <p>선택: {{ checkedItem }}</p>
+    <h3>checkbox</h3>
+
+
+
+    <q-list>
+      <!--
+        Rendering a <label> tag (notice tag="label")
+        so QCheckboxes will respond to clicks on QItems to
+        change Toggle state.
+      -->
+
+      <q-item tag="label" v-ripple>
+        <q-item-section avatar>
+          <q-checkbox v-model="color" val="teal" color="teal" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Teal</q-item-label>
+          <q-item-label caption>1</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item tag="label" v-ripple>
+        <q-item-section avatar>
+          <q-checkbox v-model="color" val="orange" color="orange" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Orange</q-item-label>
+          <q-item-label caption>2</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item tag="label" v-ripple>
+        <q-item-section avatar top>
+          <q-checkbox v-model="color" val="cyan" color="cyan" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Cyan</q-item-label>
+          <q-item-label caption>
+            3
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
+    <div class="q-px-sm q-mt-sm">
+      Your selection is: <strong>{{ color }}</strong>
+    </div>
   </div>
 
   <div>
-    <h1>radio</h1>
+    <h3>radio</h3>
     <input type="radio" id="annie" value="annie" v-model="radioItem">
     <label for="annie">annie</label>
     <input type="radio" id="buddy" value="buddy" v-model="radioItem">
@@ -47,7 +91,7 @@
   </div>
 
   <div>
-    <h1>for</h1>
+    <h3>for</h3>
     <ul>
       <li
           v-for="user in users"
@@ -60,18 +104,27 @@
 
 <script>
 import axios from 'axios';
+import { ref } from 'vue'
 export default {
+  setup () {
+    return {
+      val: ref(true)
+    }
+  },
   name: 'SimpleVue',
 
   data() {
     return {
-      checkedItem: [],
+      checkedItem: {},
+      ace: '',
+      banana: '',
       radioItem: '',
       firstname: '',
       lastname: '',
       random: parseInt(Math.random() * 6 + 1),
       users: [],
       digit: 0,
+      color: [],
     }
   },
 
@@ -103,25 +156,5 @@ export default {
 </script>
 
 <style scoped>
-div {
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid black;
-}
-h1 {
-  color: darkslateblue;
-}
-input {
-  width: 50px;
-}
-button {
-  color: white;
-  background-color: darkblue;
-  border: 1px solid black;
-  margin: 1px;
-  padding: 3px;
-}
-.ml {
-  margin-left: 5px;
-}
+
 </style>

@@ -1,40 +1,46 @@
 <template>
+  <div class="q-pa-md">
+    <q-layout view="lHh lpr lFf"  class="shadow-2 rounded-borders">
+      <q-header elevated>
+        <q-toolbar>
+          <q-btn flat round dense icon="whatshot" />
+          <q-toolbar-title>basic-vue</q-toolbar-title>
+        </q-toolbar>
+        <q-tabs>
+          <router-link to="/">
+            <q-tab name="Home" label="Home" style="color: white" />
+          </router-link>
+          <router-link to="/simpleVue">
+            <q-tab name="SimpleVue" label="SimpleVue" style="color: white" />
+          </router-link>
+          <router-link to="/parentsView">
+            <q-tab name="Parents" label="Parents" style="color: white" />
+          </router-link>
+          <router-link to="/UserView">
+            <q-tab name="User" label="User" style="color: white" />
+          </router-link>
+        </q-tabs>
+      </q-header>
 
-  <div>
-    <router-link to="/">
-      <a>Home</a>
-    </router-link>
-    <router-link to="/simpleVue">
-      <a>SimpleVue</a>
-    </router-link>
-    <router-link to="/parentsView">
-      <a>Parents</a>
-    </router-link>
-    <router-link to="/UserView">
-      <a>User</a>
-    </router-link>
+      <q-page-container>
+        <q-page class="q-pa-md">
+          <router-view />
+        </q-page>
+      </q-page-container>
+    </q-layout>
   </div>
-
-  <router-view />
 
 </template>
 
 <script>
-import "@/assets/css/main.css";
 export default {
   name: 'App',
 }
 </script>
 
-<style scoped>
-  div {
-    padding: 10px;
-    margin: 10px;
-    border: 1px dotted black;
-  }
-  a {
-    color: gray;
-    text-decoration-line: none;
-    padding: 4px;
-  }
+<style>
+a {
+  text-decoration-line: none;
+}
+
 </style>
