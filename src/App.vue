@@ -19,6 +19,9 @@
           <router-link to="/UserView">
             <q-tab name="User" label="User" style="color: white" />
           </router-link>
+          <router-link to="/TableView">
+            <q-tab name="Table" label="Table" style="color: white" />
+          </router-link>
         </q-tabs>
       </q-header>
 

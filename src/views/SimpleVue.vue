@@ -17,6 +17,11 @@
         <div class="self-center full-width no-outline" tabindex="0">{{ fullName }}</div>
       </template>
     </q-field>
+    <q-field label="Standard" stack-label>
+      <template v-slot:control>
+        <div class="self-center full-width no-outline" tabindex="0">Field content</div>
+      </template>
+    </q-field>
   </div>
 
   <div>

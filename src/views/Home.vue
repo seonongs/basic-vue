@@ -9,7 +9,17 @@ export default {
   name: "Home",
   data() {
     return {
-      realTime: new Date().toLocaleString(),
+      realTime: '',
+    }
+  },
+  created() {
+    setInterval(() => {
+          this.realTime = new Date().toLocaleString();
+    },1000);
+  },
+  methods: {
+    test() {
+
     }
   },
 }

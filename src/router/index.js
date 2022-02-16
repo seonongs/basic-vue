@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import SimpleVue from "@/views/SimpleVue.vue";
 import ParentsView from "@/views/ParentsView";
 import UserView from "@/views/UserView";
+import TableView from "@/views/TableView"
 import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
         path: "/userView",
         component: UserView,
         name: "UserView",
+    },
+    {
+        path: "/TableView",
+        component: TableView,
+        name: "TableView",
     },
     {
         path: '/:pathMatch(.*)*',
