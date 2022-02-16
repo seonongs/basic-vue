@@ -3,18 +3,18 @@
     <p>Parents</p>
     <h6>{{ title }}</h6>
   </div>
-  <child-case :title="title" @change1="changeTitle1" @change2="changeTitle2"></child-case>
+  <child :title="title" @change1="changeTitle1" @change2="changeTitle2"></child>
   <div>
     <p>Footer</p>
   </div>
 </template>
 
 <script>
-import ChildCase from "@/views/ChildView";
+import Child from "@/components/Child";
 export default {
   name: "ParentsView",
   components: {
-    ChildCase
+    Child
   },
   data() {
     return {

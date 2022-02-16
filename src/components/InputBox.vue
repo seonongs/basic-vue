@@ -1,12 +1,8 @@
 <template>
   <div>
-    <span class="material-icons-outlined">
-    credit_card
-    </span>
+    <span class="material-icons-outlined">credit_card</span>
     <q-input type="text" v-model="user.name"></q-input>
-    <span class="material-icons">
-    phone_iphone
-    </span>
+    <span class="material-icons">phone_iphone</span>
     <q-input type="text" v-model="user.phone"></q-input>
     <q-btn @click="changeUserInfo">수정</q-btn>
   </div>
@@ -32,14 +28,7 @@ export default {
     changeUserInfo() {
       this.$emit('InputBox', this.user)
     },
-
   },
-  emits: {
-
-  },
-  mounted() {
-    this.emitter.on("eventDate", this.addData);
-  }
 }
 </script>
 

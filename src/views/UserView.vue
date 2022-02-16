@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h3>{{ name }}</h3>
-    <h3>{{ phone }}</h3>
+    <p>{{ name }}</p>
+    <p>{{ phone }}</p>
 
   </div>
-  <InputBox :name="name" :phone="phone" @InputBox="changeUserInfo"/>
+  <input-box :name="name" :phone="phone" @InputBox="changeUserInfo"/>
   <EditedDate></EditedDate>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       name: '김선홍',
-      phone: '010',
+      phone: '010-1234-1234',
     }
   },
   methods: {

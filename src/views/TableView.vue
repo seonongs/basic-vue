@@ -23,13 +23,10 @@
       </ul>
     </template>
   </lsc-slot>
-
-<!--    <table-detail :rows="rows"/>-->
   </div>
 </template>
 
 <script>
-//import TableDetail from "@/components/TableDetail";
 import LscSlot from "@/components/LscSlot";
 export default {
   name: "TableView",

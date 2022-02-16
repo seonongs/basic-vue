@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "ChildView",
+  name: "Child",
   components: {},
 
   props: {
