@@ -4,22 +4,23 @@
       <q-header elevated>
         <q-toolbar>
           <q-btn flat round dense icon="whatshot" />
-          <q-toolbar-title>basic-vue</q-toolbar-title>
+          <q-toolbar-title>Basic-vue</q-toolbar-title>
+          <span style="text-align: right;">{{ realTime }}</span>
         </q-toolbar>
         <q-tabs>
           <router-link to="/">
             <q-tab name="Home" label="Home" style="color: white" />
           </router-link>
-          <router-link to="/simpleVue">
-            <q-tab name="SimpleVue" label="SimpleVue" style="color: white" />
+          <router-link to="/example">
+            <q-tab name="Example" label="Example" style="color: white" />
           </router-link>
-          <router-link to="/parentsView">
+          <router-link to="/parents">
             <q-tab name="Parents" label="Parents" style="color: white" />
           </router-link>
-          <router-link to="/UserView">
+          <router-link to="/user">
             <q-tab name="User" label="User" style="color: white" />
           </router-link>
-          <router-link to="/TableView">
+          <router-link to="/table">
             <q-tab name="Table" label="Table" style="color: white" />
           </router-link>
         </q-tabs>
@@ -38,6 +39,16 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      realTime: '',
+    }
+  },
+  created() {
+    setInterval(() => {
+      this.realTime = new Date().toLocaleString();
+    }, 1000);
+  },
 }
 </script>
 

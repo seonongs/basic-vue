@@ -116,7 +116,7 @@ export default {
       val: ref(true)
     }
   },
-  name: 'SimpleVue',
+  name: 'ExampleView',
 
   data() {
     return {

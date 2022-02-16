@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
-import SimpleVue from "@/views/SimpleVue.vue";
+import ExampleView from "@/views/ExampleView.vue";
 import ParentsView from "@/views/ParentsView";
 import UserView from "@/views/UserView";
 import TableView from "@/views/TableView"
@@ -13,22 +13,22 @@ const routes = [
         name: "Home",
     },
     {
-        path: "/simpleVue",
-        component: SimpleVue,
-        name: "SimpleVue",
+        path: "/example",
+        component: ExampleView,
+        name: "ExampleView",
     },
     {
-        path: "/parentsView",
+        path: "/parents",
         component: ParentsView,
         name: "ParentsView",
     },
     {
-        path: "/userView",
+        path: "/user",
         component: UserView,
         name: "UserView",
     },
     {
-        path: "/TableView",
+        path: "/table",
         component: TableView,
         name: "TableView",
     },
