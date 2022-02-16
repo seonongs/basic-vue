@@ -1,13 +1,11 @@
 <template>
   <div>
-    위
+    <p>Parents</p>
+    <h6>{{ title }}</h6>
   </div>
+  <child-case :title="title" @change1="changeTitle1" @change2="changeTitle2"></child-case>
   <div>
-    {{ memoP }}
-    <child-case :title="appTitle" :memoP="memoP" @change1="changeTitle2" @change2="changeTitle1"></child-case>
-  </div>
-  <div>
-    아래
+    <p>Footer</p>
   </div>
 </template>
 
@@ -20,22 +18,17 @@ export default {
   },
   data() {
     return {
-      appTitle: "갑니당",
-      memoP: "memoPdddddddddd",
+      title: "안녕하세요",
     }
   },
 
   methods: {
-    sendChild(){
-      alert('보내기');
-    },
     changeTitle1() {
-      this.appTitle = "hi"
+      this.title = "hi"
     },
     changeTitle2() {
-      this.appTitle = "hello"
-    }
-
+      this.title = "hello"
+    },
   }
 }
 </script>
@@ -45,8 +38,5 @@ div {
   padding: 10px;
   margin: 10px;
   border: 2px solid black;
-}
-h1 {
-  color: darkslateblue;
 }
 </style>

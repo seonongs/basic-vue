@@ -30,7 +30,7 @@
 
 <script>
 //import TableDetail from "@/components/TableDetail";
-import LscSlot from "@/components/lscSlot";
+import LscSlot from "@/components/LscSlot";
 export default {
   name: "TableView",
   components: {LscSlot},

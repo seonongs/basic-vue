@@ -12,16 +12,7 @@
     <h3>compute</h3>
     <q-input v-model="firstname" label="first" style="width: 100px; display: inline-flex" />
     <q-input v-model="lastname" label="last" style="width: 100px; display: inline-flex" />
-    <q-field label="full" stack-label style="width: 150px; display: inline-flex">
-      <template v-slot:control>
-        <div class="self-center full-width no-outline" tabindex="0">{{ fullName }}</div>
-      </template>
-    </q-field>
-    <q-field label="Standard" stack-label>
-      <template v-slot:control>
-        <div class="self-center full-width no-outline" tabindex="0">Field content</div>
-      </template>
-    </q-field>
+    {{fullName}}
   </div>
 
   <div>
@@ -37,16 +28,7 @@
 
   <div>
     <h3>checkbox</h3>
-
-
-
     <q-list>
-      <!--
-        Rendering a <label> tag (notice tag="label")
-        so QCheckboxes will respond to clicks on QItems to
-        change Toggle state.
-      -->
-
       <q-item tag="label" v-ripple>
         <q-item-section avatar>
           <q-checkbox v-model="color" val="teal" color="teal" />
