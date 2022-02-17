@@ -1,5 +1,25 @@
 <template>
   <div>
+
+    <p></p>
+    <q-card class="my-card">
+      <q-card-section class="bg-primary text-white">
+        <div class="text-h6">Slot</div>
+      </q-card-section>
+      <q-separator />
+      <q-card-actions>
+
+        <BtnSlot @reset="reset">
+          <template v-slot:BtnSlot="BtnSlot">
+            <h5>[{{ BtnSlot.number }}]</h5>
+            <p>슬롯버튼투입</p>
+            <q-btn @click="$emit('reset')">reset</q-btn>
+          </template>
+        </BtnSlot>
+
+      </q-card-actions>
+    </q-card>
+
   <p></p>
   <q-card class="my-card">
     <q-card-section class="bg-primary text-white">
@@ -25,13 +45,15 @@
       @changeUserInfoC="changeUserInfo">
   </child>
   </div>
+
 </template>
 
 <script>
 import Child from "@/components/Child";
+import BtnSlot from "@/components/BtnSlot";
 export default {
   name: "ParentsView",
-  components: { Child },
+  components: { BtnSlot, Child },
   data() {
     return {
       user: {
@@ -52,6 +74,9 @@ export default {
     changeUserInfo(user) {
       this.user.name = user.name;
       this.user.phone = user.phone;
+    },
+    reset(){
+      alert(1)
     }
   }
 }

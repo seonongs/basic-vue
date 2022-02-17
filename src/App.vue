@@ -17,9 +17,6 @@
           <router-link to="/parents">
             <q-tab name="Parents" label="Parents" style="color: white" />
           </router-link>
-          <router-link to="/user">
-            <q-tab name="User" label="User" style="color: white" />
-          </router-link>
           <router-link to="/table">
             <q-tab name="Table" label="Table" style="color: white" />
           </router-link>

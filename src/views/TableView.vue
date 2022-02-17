@@ -30,7 +30,7 @@
 import LscSlot from "@/components/LscSlot";
 export default {
   name: "TableView",
-  components: {LscSlot},
+  components: { LscSlot },
   setup () {
     return {
       columns,
