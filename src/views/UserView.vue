@@ -5,16 +5,14 @@
 
   </div>
   <input-box :name="name" :phone="phone" @InputBox="changeUserInfo"/>
-  <EditedDate></EditedDate>
 </template>
 
 <script>
 import InputBox from "@/components/InputBox";
-import EditedDate from "@/components/EditedDate";
 
 export default {
   name: "UserView",
-  components: { InputBox, EditedDate },
+  components: { InputBox },
   data() {
     return {
       name: '김선홍',
